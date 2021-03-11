@@ -44,11 +44,12 @@ const randomWord = () => {
   const word = {
     index: Math.floor(Math.random() * wordList.length),
     wordLength: wordList.length,
+    // Create a function here that loops through index of randomized string
   };
-  return word.index;
+  return word;
 };
 
-const gameWord = randomWord();
+const gameWord = randomWord().index;
 
 const notAllowed = [
   "`",
@@ -106,9 +107,23 @@ const allowedCharacters = [
   "z",
 ];
 
-window.onsubmit = () => {
+const inputField = document.querySelector(".input-field");
+
+window.onsubmit = (e) => {
+  e.preventDefault();
+
   // Fetch value of input field
+  const inputValue = inputField.value.toLowerCase();
+
   // Check if it is a valid character
+  if (allowedCharacters.includes(inputValue)) {
+    // Todo > loop through every index of the string gameWord
+  }
+
   // Compare to see if character exists in gameWord
+
   // if (character exists in gameWord) do
+
+  // Resets input field
+  inputField.value = "";
 };
