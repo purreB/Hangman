@@ -118,9 +118,8 @@ window.onsubmit = (e) => {
   // Check if it is a valid character
   if (allowedCharacters.includes(inputValue)) {
     // Todo > loop through every index of the string gameWord
+    // Compare to see if character exists in gameWord
   }
-
-  // Compare to see if character exists in gameWord
 
   // if (character exists in gameWord) do
 
