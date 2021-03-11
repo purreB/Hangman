@@ -53,8 +53,8 @@ button.reset {
 
 .buttons {
   display: grid;
-  grid-template-columns: repeat(10, 1fr);
-  grid-template-rows: repeat(3, 1fr);
+  grid-template-columns: repeat(13, 1fr);
+  grid-template-rows: repeat(2, 1fr);
   max-width: max-content;
   gap: 0.5rem;
   margin: 1rem 0;
