@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+.invisible {
+  display: none !important;
+}
+
 body {
   min-height: 100vh;
   background-color: antiquewhite;
@@ -23,9 +27,15 @@ body {
   align-items: center;
 }
 
-canvas {
-  background-color: whitesmoke;
-  box-shadow: 0px 0px 5px rgba(68, 68, 68, 0.5);
+#gameCanvas {
+  width: 501px;
+  height: 565px;
+  position: relative;
+  margin: 2rem 0;
+}
+
+#gameCanvas > img {
+  position: absolute;
 }
 
 button.reset {
