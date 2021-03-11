@@ -41,11 +41,14 @@ const wordList = [
 
 // Randomy choose word
 const randomWord = () => {
-  const word = Math.floor(Math.random() * wordList.length);
-  return word;
+  const word = {
+    index: Math.floor(Math.random() * wordList.length),
+    wordLength: wordList.length,
+  };
+  return word.index;
 };
 
-randomWord();
+const gameWord = randomWord();
 
 const notAllowed = [
   "`",
@@ -60,7 +63,7 @@ const notAllowed = [
   "[",
   "]",
   "|",
-  "];{",
+  "{",
   "}",
   "(",
   ")",
@@ -69,6 +72,43 @@ const notAllowed = [
   "+",
   "-",
   "?",
+  "å",
+  "ä",
+  "ö",
 ];
 
-console.log(notAllowed);
+const allowedCharacters = [
+  "a",
+  "b",
+  "c",
+  "d",
+  "e",
+  "f",
+  "g",
+  "h",
+  "i",
+  "j",
+  "k",
+  "l",
+  "m",
+  "n",
+  "o",
+  "p",
+  "q",
+  "r",
+  "s",
+  "t",
+  "u",
+  "v",
+  "w",
+  "x",
+  "y",
+  "z",
+];
+
+window.onsubmit = () => {
+  // Fetch value of input field
+  // Check if it is a valid character
+  // Compare to see if character exists in gameWord
+  // if (character exists in gameWord) do
+};
