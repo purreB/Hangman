@@ -12,6 +12,7 @@ const images = [
 ];
 
 const canvas = document.querySelector("#gameCanvas");
+const inputField = document.querySelector(".input-field");
 
 // Word List
 const wordList = [
@@ -43,13 +44,21 @@ const wordList = [
 const randomWord = () => {
   const word = {
     index: Math.floor(Math.random() * wordList.length),
-    wordLength: wordList.length,
+    wordLength: wordList.length
     // Create a function here that loops through index of randomized string
   };
   return word;
 };
 
-const gameWord = randomWord().index;
+const gameWord = randomWord();
+console.log(wordList[gameWord.index]);
+
+( function() {
+  for (let i = 0; i < wordList[gameWord.index].length; i++) {
+    createP(i);
+  }
+}());
+
 
 const notAllowed = [
   "`",
@@ -107,22 +116,31 @@ const allowedCharacters = [
   "z",
 ];
 
-const inputField = document.querySelector(".input-field");
+function createP(index){
+  document.querySelector(".output").innerHTML += `
+    <div class="wordLetter-wrapper">
+      <p class="wordLetter wordLetter${index}"></p>
+      <span class="underline"></span>
+    </div>
+  `;
+}
 
 window.onsubmit = (e) => {
   e.preventDefault();
 
   // Fetch value of input field
   const inputValue = inputField.value.toLowerCase();
-
+  
   // Check if it is a valid character
   if (allowedCharacters.includes(inputValue)) {
     // Todo > loop through every index of the string gameWord
     // Compare to see if character exists in gameWord
+
+    for( let i = 0; i < wordList[gameWord.index].length; i++) {
+      if(inputValue === wordList[gameWord.index].charAt(i)) {
+        document.querySelector(`.wordLetter${i}`).innerText = inputValue;
+      }
+    }
+    // Add image
   }
-
-  // if (character exists in gameWord) do
-
-  // Resets input field
-  inputField.value = "";
 };
