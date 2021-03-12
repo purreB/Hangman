@@ -28,12 +28,10 @@ const wordList = [
   "max",
 ];
 
-// Randomy choose word
+// Randomly choose word
 const randomWord = () => {
   const word = {
-    index: Math.floor(Math.random() * wordList.length),
-    wordLength: wordList.length
-    // Create a function here that loops through index of randomized string
+    index: Math.floor(Math.random() * wordList.length)
   };
   return word;
 };
@@ -95,23 +93,14 @@ window.onsubmit = (e) => {
   // Fetch value of input field
   const inputValue = inputField.value.toLowerCase();
   
-
   // Check if it is a valid character
   if (allowedCharacters.includes(inputValue)) {
-    // Todo > loop through every index of the string gameWord
-    // Compare to see if character exists in gameWord
 
+    // loop through every index of the string gameWord
+    // Compare to see if character exists in gameWord
     for( let i = 0; i < wordList[gameWord.index].length; i++) {
       if(inputValue === wordList[gameWord.index].charAt(i)) {
         document.querySelector(`.wordLetter${i}`).innerText = inputValue;
-        // if(countImage === 0) {
-          //   countImage++;
-          // }
-          // do {
-          //   countImage++;
-          // } while (ifGuessedRight === false);
-          // ifGuessedRight = true;
-          // break;
           ifGuessedRight = true;
           break;
         } else {
