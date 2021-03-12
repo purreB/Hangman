@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap");
+
 * {
   margin: 0;
   padding: 0;
@@ -32,10 +34,38 @@ body {
   height: 565px;
   position: relative;
   margin: 2rem 0;
+  background-color: aliceblue;
 }
 
 #gameCanvas > img {
   position: absolute;
+}
+
+.output {
+  min-height: 6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wordLetter-wrapper {
+  position: relative;
+  margin: 0 1rem;
+}
+
+.wordLetter {
+  font-size: 4rem;
+  color: #08a4ff;
+  font: "Poppins", sans-serif;
+}
+
+.underline {
+  position: absolute;
+  right: -6px;
+  left: -6px;
+  bottom: 7px;
+  height: 2px;
+  background: #000;
 }
 
 button.reset {
@@ -49,6 +79,7 @@ button.reset {
 .buttons-wrapper {
   display: flex;
   justify-content: center;
+  background: aliceblue;
 }
 
 .buttons {

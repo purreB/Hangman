@@ -1,74 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hangman</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
 
-  <body>
-    <div class="container">
-      <!-- Game Section -->
-      <section class="game">
-        <button class="reset box">Restart Game</button>
-        <!-- <canvas id="gameCanvas" width="1000" height="600" class="box"></canvas> -->
-        <div id="gameCanvas">
-          <img class="game-image invisible" src="./Images/0.png" />
-          <img class="game-image invisible" src="./Images/1.png" />
-          <img class="game-image invisible" src="./Images/2.png" />
-          <img class="game-image invisible" src="./Images/3.png" />
-          <img class="game-image invisible" src="./Images/4.png" />
-          <img class="game-image invisible" src="./Images/5.png" />
-        </div>
-        <section class="output"></section>
-      </section>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hangman</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
 
-      <!-- Button Section -->
-      <div class="buttons-wrapper">
-        <section class="buttons">
-          <button class="character box">A</button>
-          <button class="character box">B</button>
-          <button class="character box">C</button>
-          <button class="character box">D</button>
-          <button class="character box">E</button>
-          <button class="character box">F</button>
-          <button class="character box">G</button>
-          <button class="character box">H</button>
-          <button class="character box">I</button>
-          <button class="character box">J</button>
-          <button class="character box">K</button>
-          <button class="character box">L</button>
-          <button class="character box">M</button>
-          <button class="character box">N</button>
-          <button class="character box">O</button>
-          <button class="character box">P</button>
-          <button class="character box">Q</button>
-          <button class="character box">R</button>
-          <button class="character box">S</button>
-          <button class="character box">T</button>
-          <button class="character box">U</button>
-          <button class="character box">V</button>
-          <button class="character box">W</button>
-          <button class="character box">X</button>
-          <button class="character box">Y</button>
-          <button class="character box">Z</button>
-        </section>
+<body>
+  <div class="container">
+    <!-- Game Section -->
+    <section class="game">
+      <button class="reset box">Restart Game</button>
+      <!-- <canvas id="gameCanvas" width="1000" height="600" class="box"></canvas> -->
+      <div id="gameCanvas">
+        <img class="game-image invisible" src="./Images/0.png" />
+        <img class="game-image invisible" src="./Images/1.png" />
+        <img class="game-image invisible" src="./Images/2.png" />
+        <img class="game-image invisible" src="./Images/3.png" />
+        <img class="game-image invisible" src="./Images/4.png" />
+        <img class="game-image invisible" src="./Images/5.png" />
       </div>
-      <form>
-        <input
-          type="text"
-          name="input-field"
-          class="input-field box"
-          placeholder="Only type 1 letter"
-          maxlength="1"
-          minlength="1"
-          required
-        />
-        <button type="submit">Enter</button>
-      </form>
+      <section class="output">
+        <!-- <div class="wordLetter-wrapper">
+          <p class="wordLetter"></p>
+          <span class="underline"></span>
+        </div> -->
+      </section>
+    </section>
+
+    <!-- Button Section -->
+    <div class="buttons-wrapper">
+      <section class="buttons">
+        <button class="character box">A</button>
+        <button class="character box">B</button>
+        <button class="character box">C</button>
+        <button class="character box">D</button>
+        <button class="character box">E</button>
+        <button class="character box">F</button>
+        <button class="character box">G</button>
+        <button class="character box">H</button>
+        <button class="character box">I</button>
+        <button class="character box">J</button>
+        <button class="character box">K</button>
+        <button class="character box">L</button>
+        <button class="character box">M</button>
+        <button class="character box">N</button>
+        <button class="character box">O</button>
+        <button class="character box">P</button>
+        <button class="character box">Q</button>
+        <button class="character box">R</button>
+        <button class="character box">S</button>
+        <button class="character box">T</button>
+        <button class="character box">U</button>
+        <button class="character box">V</button>
+        <button class="character box">W</button>
+        <button class="character box">X</button>
+        <button class="character box">Y</button>
+        <button class="character box">Z</button>
+      </section>
     </div>
-    <script src="/Js/app.js"></script>
-  </body>
+    <form>
+      <input type="text" name="input-field" class="input-field box" placeholder="Only type 1 letter" maxlength="1"
+        minlength="1" required />
+      <button type="submit">Enter</button>
+    </form>
+  </div>
+  <script src="/Js/app.js"></script>
+</body>
+
 </html>
