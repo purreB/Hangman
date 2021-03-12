@@ -16,26 +16,14 @@ const inputField = document.querySelector(".input-field");
 
 // Word List
 const wordList = [
-  "clowning",
-  "tomato",
-  "potato",
   "pluto",
   "gun",
   "run",
-  "nun",
-  "chicken",
   "ladybug",
-  "rooster",
-  "weather",
-  "feather",
-  "together",
-  "ginger",
-  "summer",
   "drumstick",
   "cold",
   "hot",
   "winter",
-  "autumn",
   "spring",
   "max",
 ];
@@ -53,39 +41,12 @@ const randomWord = () => {
 const gameWord = randomWord();
 console.log(wordList[gameWord.index]);
 
+// IIFE
 ( function() {
   for (let i = 0; i < wordList[gameWord.index].length; i++) {
     createP(i);
   }
 }());
-
-
-const notAllowed = [
-  "`",
-  "~",
-  ".",
-  "<",
-  ">",
-  ";",
-  ":",
-  "\\",
-  "/",
-  "[",
-  "]",
-  "|",
-  "{",
-  "}",
-  "(",
-  ")",
-  "=",
-  "_",
-  "+",
-  "-",
-  "?",
-  "å",
-  "ä",
-  "ö",
-];
 
 const allowedCharacters = [
   "a",
@@ -125,12 +86,16 @@ function createP(index){
   `;
 }
 
+let countImage = 0;
+let ifGuessedRight = true;
+
 window.onsubmit = (e) => {
   e.preventDefault();
 
   // Fetch value of input field
   const inputValue = inputField.value.toLowerCase();
   
+
   // Check if it is a valid character
   if (allowedCharacters.includes(inputValue)) {
     // Todo > loop through every index of the string gameWord
@@ -139,8 +104,54 @@ window.onsubmit = (e) => {
     for( let i = 0; i < wordList[gameWord.index].length; i++) {
       if(inputValue === wordList[gameWord.index].charAt(i)) {
         document.querySelector(`.wordLetter${i}`).innerText = inputValue;
+        // if(countImage === 0) {
+          //   countImage++;
+          // }
+          // do {
+          //   countImage++;
+          // } while (ifGuessedRight === false);
+          // ifGuessedRight = true;
+          // break;
+          ifGuessedRight = true;
+          break;
+        } else {
+          ifGuessedRight = false;
+        }
       }
+      
+      // Add image
+    if(countImage === 0 && ifGuessedRight === false) {
+      $(`.game-image[src='./Images/${countImage}.png'`).classList = notInvisibleClass;
+      countImage++;
+      ifGuessedRight = true;
+    } 
+    if(countImage === 1 && ifGuessedRight === false) {
+      $(`.game-image[src='./Images/${countImage}.png'`).classList = notInvisibleClass;
+      countImage++;
+      ifGuessedRight = true;
+    } 
+    if(countImage === 2 && ifGuessedRight === false) {
+      $(`.game-image[src='./Images/${countImage}.png'`).classList = notInvisibleClass;
+      countImage++;
+      ifGuessedRight = true;
+    } 
+    if(countImage === 3 && ifGuessedRight === false) {
+      $(`.game-image[src='./Images/${countImage}.png'`).classList = notInvisibleClass;
+      countImage++;
+      ifGuessedRight = true;
+    } 
+    if(countImage === 4 && ifGuessedRight === false) {
+      $(`.game-image[src='./Images/${countImage}.png'`).classList = notInvisibleClass;
+      countImage++;
+      ifGuessedRight = true;
+    } 
+    if(countImage === 5 && ifGuessedRight === false) {
+      $(`.game-image[src='./Images/${countImage}.png'`).classList = notInvisibleClass;
+      countImage++;
+      ifGuessedRight = true;
+      countImage = 0;
+      document.querySelector(".output").innerHTML = `<p style="font-size:5rem;color:red;">You lost! Try again!</p>`;
     }
-    // Add image
   }
+  return false;
 };

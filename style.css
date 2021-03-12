@@ -34,7 +34,6 @@ body {
   height: 565px;
   position: relative;
   margin: 2rem 0;
-  background-color: aliceblue;
 }
 
 #gameCanvas > img {
@@ -79,7 +78,6 @@ button.reset {
 .buttons-wrapper {
   display: flex;
   justify-content: center;
-  background: aliceblue;
 }
 
 .buttons {
